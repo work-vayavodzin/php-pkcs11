@@ -7,7 +7,6 @@ $session = $module->openSession((int)getenv('PHP11_SLOT'), Pkcs11\CKF_RW_SESSION
 $session->login(Pkcs11\CKU_USER, getenv('PHP11_PIN'));
 
 $skey = $session->findObjects([
-	Pkcs11\CKA_LABEL => getenv('PHP11_LABEL'),
 	Pkcs11\CKA_CLASS => Pkcs11\CKO_PRIVATE_KEY
 ])[0];
 
