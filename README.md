@@ -10,13 +10,14 @@ softhsm2-util --show-slots
 
 ### Create and store key, {PHP11_SLOT} - should be you own slot identity from output
 
-pkcs11-tool --module /usr/lib/softhsm/libsofthsm2.so -l -p 123456 -k --id 1 --label "Test RSA Key" --key-type rsa:2048  --slot {PHP11_SLOT}
+pkcs11-tool --module /usr/lib/softhsm/libsofthsm2.so -l -p 123456 -k --id 1 --label {PHP11_LABEL}  --key-type rsa:2048  --slot {PHP11_SLOT}
 
 ### Export config
 
 export PHP11_MODULE=/usr/lib/softhsm/libsofthsm2.so \
 export PHP11_SLOT={PHP11_SLOT} \
 export PHP11_PIN=123456
+export PHP11_LABEL=ImportedPrivateKey
 
 ### Test cli
 

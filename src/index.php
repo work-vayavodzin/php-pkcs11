@@ -1,1 +1,2 @@
-hello world go to sign page
+<?php
+phpinfo();
